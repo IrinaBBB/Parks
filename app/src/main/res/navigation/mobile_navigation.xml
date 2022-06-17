@@ -14,6 +14,15 @@
         android:id="@+id/navigation_parks"
         android:name="ru.irinavb.parks.ui.parks.ParksFragment"
         android:label="@string/parks"
-        tools:layout="@layout/fragment_parks" />
+        tools:layout="@layout/fragment_parks" >
+        <action
+            android:id="@+id/action_navigation_parks_to_navigation_details"
+            app:destination="@id/navigation_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="ru.irinavb.parks.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 
 </navigation>

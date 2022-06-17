@@ -32,10 +32,9 @@ public class MapsFragment extends Fragment {
             Repository.getParks(new AsyncResponse() {
                 @Override
                 public void processPark(List<Park> parks) {
-                    // LatLng middle = new LatLng(39.50, -98.35);
                     LatLng middle = new LatLng(Double.parseDouble(parks.get(0).getLatitude()),
                             Double.parseDouble(parks.get(0).getLongitude()));
-                    googleMap.moveCamera(CameraUpdateFactory.newLatLng(middle));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(middle, 4));
                     for (Park park : parks) {
                         Log.d("TAG", "processPark: " + park.getLatitude());
                         LatLng parkLatLong = new LatLng(Double.parseDouble(park.getLatitude()),
